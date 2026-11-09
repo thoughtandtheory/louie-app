@@ -101,6 +101,20 @@
   .aside p { margin: 0; font-size: 20px; line-height: 1.35; }
   .aside p b { font-weight: 800; }
 
+  /* About the maker: bunny-Dennis on the blush disc, a short note beside him */
+  .about { display: grid; grid-template-columns: 1fr; gap: 20px; align-items: center; padding: 8px 0 64px; }
+  .about .me { position: relative; width: 168px; aspect-ratio: 1; border-radius: 50%; background: var(--blush-tint); overflow: hidden; }
+  /* Three single-colour layers, tinted with Louie's colours so dark mode recolours him too */
+  .about .me span { position: absolute; inset: 0; -webkit-mask: var(--m) center / contain no-repeat; mask: var(--m) center / contain no-repeat; }
+  .about .me .fill { --m: url(assets/dennis-bunny-fill.png); background: var(--louie-fill); }
+  .about .me .accent { --m: url(assets/dennis-bunny-accent.png); background: var(--louie-accent); }
+  .about .me .line { --m: url(assets/dennis-bunny-line.png); background: var(--louie-line); }
+  .about h2 { font-size: clamp(28px, 6vw, 36px); line-height: 1.05; letter-spacing: -0.01em; margin: 10px 0 10px; font-weight: 800; }
+  .about h2 span { font-weight: 300; }
+  .about p.note { margin: 0; font-size: 19px; color: var(--ink-muted); max-width: 34em; }
+  .about p.note b { color: var(--ink); font-weight: 600; }
+  @media (min-width: 640px) { .about { grid-template-columns: auto 1fr; gap: 32px; } }
+
   footer { border-top: 2px solid var(--track); padding: 24px 0 48px; display: flex; flex-wrap: wrap; gap: 8px 24px;
            justify-content: space-between; color: var(--ink-muted); font-size: 15px; }
   footer nav { display: flex; gap: 20px; }
@@ -208,6 +222,15 @@
 </svg></div>
       <p><b>Zone 2.</b> Louie's peace sign is the whole idea: easy enough to chat, steady enough to grow.</p>
     </div>
+
+    <section class="about" aria-labelledby="about-title">
+      <div class="me" role="img" aria-label="Dennis drawn as a bunny in Louie's style, with round glasses and a peace sign"><span class="fill"></span><span class="accent"></span><span class="line"></span></div>
+      <div>
+        <p class="label">Who made this</p>
+        <h2 id="about-title"><span>Hi, I'm</span> Dennis.</h2>
+        <p class="note">This app is built by <b>Dennis Eusebio</b>, Senior Designer at Higher Pixels. I usually hate running, but Louie makes it tolerable.</p>
+      </div>
+    </section>
   </main>
 
   <footer>
