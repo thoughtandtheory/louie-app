@@ -57,8 +57,10 @@
   /* Hero: "Meet" in the soft 300, "Louie." in the heavy 800, Louie raised beside "Meet" on a blush sun */
   .hero { display: grid; grid-template-columns: 1fr; align-items: end; padding: 8px 0 56px; }
   .art { position: relative; justify-self: end; width: min(56vw, 250px); margin-bottom: 12px; margin-right: 8px; z-index: 0; }
-  .sun { position: absolute; width: 120%; aspect-ratio: 1; border-radius: 50%; background: var(--blush-tint);
-         right: -34%; top: 6%; z-index: -1; }
+  /* Same proportions as the app's WelcomeStep: a 210pt sun behind a 157 x 290pt Louie,
+     centred just right of him, its middle about halfway up from his feet. */
+  .sun { position: absolute; width: 134%; aspect-ratio: 1; border-radius: 50%; background: var(--blush-tint);
+         left: -13%; bottom: 12.4%; z-index: -1; }
   .louie { display: block; width: 100%; height: auto; }
   .louie .shades, .louie .shine { display: var(--shades); }
   .copy { position: relative; z-index: 1; }
@@ -78,7 +80,6 @@
   @media (min-width: 820px) {
     .hero { grid-template-columns: 1.15fr 0.85fr; padding: 32px 0 96px; }
     .art { grid-column: 2; grid-row: 1; width: 100%; max-width: 360px; margin: 0; justify-self: center; }
-    .sun { width: 118%; right: -22%; top: 4%; }
     .copy { grid-column: 1; grid-row: 1; padding-bottom: 24px; }
   }
 
