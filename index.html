@@ -68,6 +68,7 @@
   @media (prefers-color-scheme: dark) { .brand .light { display: none; } .brand .dark { display: block; } }
   .navlink { font-weight: 600; font-size: 15px; text-decoration: none; color: var(--ink-muted); padding: 10px 0; }
   .navlink:hover { color: var(--ink); }
+  .topnav { display: flex; gap: 20px; }
 
   /* Hero: "Meet" in the soft 300, "Louie." in the heavy 800, Louie raised beside "Meet" on a blush sun */
   .hero { display: grid; grid-template-columns: 1fr; align-items: end; padding: 8px 0 56px; }
@@ -154,7 +155,10 @@
       <img class="dark" src="assets/icon-dark.png" alt="">
       Louie
     </a>
-    <a class="navlink" href="privacy/">Privacy</a>
+    <nav class="topnav">
+      <a class="navlink" href="releases/">Release notes</a>
+      <a class="navlink" href="privacy/">Privacy</a>
+    </nav>
   </header>
 
   <main>
@@ -252,6 +256,7 @@
   <footer>
     <span>Louie: Zone 2 Run Buddy</span>
     <nav>
+      <a href="releases/">Release notes</a>
       <a href="privacy/">Privacy policy</a>
       <a href="mailto:dennis@thoughtandtheory.com">Contact</a>
     </nav>

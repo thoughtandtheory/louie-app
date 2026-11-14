@@ -1,7 +1,10 @@
 # Louie: Zone 2 Run Buddy
 
-The public site for Louie: a home page and the [privacy policy](https://thoughtandtheory.github.io/louie-app/privacy/).
+The public site for Louie: a home page, [release notes](https://thoughtandtheory.github.io/louie-app/releases/) and the [privacy policy](https://thoughtandtheory.github.io/louie-app/privacy/).
 The app itself lives in a private repo; the privacy page is copied from its `docs/privacy/index.html`.
+
+The release notes page (`releases/index.html`) is made by the app repo's `scripts/release-notes.sh` from its
+`docs/release-notes.md` and pushed here after each TestFlight build. Don't edit it here: it is overwritten.
 
 The home page follows the Louie brand (tokens, Outfit type and Louie's art from the app repo's
 `design/brand/louie/`), light and dark with the system. `assets/` holds the Outfit fonts (SIL OFL,

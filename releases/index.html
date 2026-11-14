@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<!-- Made by scripts/release-notes.sh in the app repo from docs/release-notes.md. Don't edit here: it is overwritten on each release. -->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Louie: release notes</title>
+<meta name="description" content="What changed in each build of Louie, the Zone 2 run buddy for iPhone and Apple Watch.">
+<link rel="canonical" href="https://thoughtandtheory.github.io/louie-app/releases/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Louie">
+<meta property="og:title" content="Louie: release notes">
+<meta property="og:description" content="What changed in each build of Louie, the Zone 2 run buddy for iPhone and Apple Watch.">
+<meta property="og:url" content="https://thoughtandtheory.github.io/louie-app/releases/">
+<meta property="og:image" content="https://thoughtandtheory.github.io/louie-app/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Louie the bunny flashing a peace sign beside the words Meet Louie.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://thoughtandtheory.github.io/louie-app/assets/og-image.png">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#F5F0E4" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#10132A" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="../assets/icon-light.png" media="(prefers-color-scheme: light)">
+<link rel="icon" href="../assets/icon-dark.png" media="(prefers-color-scheme: dark)">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<style>
+  @font-face { font-family: Outfit; font-weight: 300; font-display: swap; src: url(../assets/Outfit-Light.ttf) format("truetype"); }
+  @font-face { font-family: Outfit; font-weight: 400; font-display: swap; src: url(../assets/Outfit-Regular.ttf) format("truetype"); }
+  @font-face { font-family: Outfit; font-weight: 600; font-display: swap; src: url(../assets/Outfit-SemiBold.ttf) format("truetype"); }
+  @font-face { font-family: Outfit; font-weight: 800; font-display: swap; src: url(../assets/Outfit-ExtraBold.ttf) format("truetype"); }
+  :root { --ground: #F5F0E4; --track: #E4DBC9; --ink: #2343C4; --ink-muted: #44579F; }
+  @media (prefers-color-scheme: dark) { :root { --ground: #10132A; --track: #2A3060; --ink: #DDE3FF; --ink-muted: #A3AEDB; } }
+  * { box-sizing: border-box; }
+  html { background: var(--ground); -webkit-text-size-adjust: 100%; }
+  body { margin: 0 auto; max-width: 680px; padding: 0 24px 56px; color: var(--ink); background: var(--ground);
+         font: 400 17px/1.6 Outfit, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+         -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  header { display: flex; align-items: center; justify-content: space-between; padding: 24px 0 40px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 800; font-size: 20px; letter-spacing: -0.01em; }
+  .brand img { width: 32px; height: 32px; border-radius: 8px; }
+  .brand .dark { display: none; }
+  @media (prefers-color-scheme: dark) { .brand .light { display: none; } .brand .dark { display: block; } }
+  .navlink { font-weight: 600; font-size: 15px; text-decoration: none; color: var(--ink-muted); padding: 10px 0; }
+  .navlink:hover { color: var(--ink); }
+  h1 { margin: 0 0 16px; line-height: 0.9; letter-spacing: -0.02em; }
+  h1 span { display: block; }
+  h1 .soft { font-weight: 300; font-size: clamp(40px, 10vw, 56px); }
+  h1 .heavy { font-weight: 800; font-size: clamp(46px, 11.5vw, 64px); }
+  .lede { font-size: 20px; line-height: 1.4; margin: 0 0 8px; padding-bottom: 32px; border-bottom: 2px solid var(--track); }
+  h2 { font-weight: 600; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); margin: 32px 0 8px; }
+  article + article { margin-top: 20px; }
+  p { margin: 0; }
+  .build { font-size: 14px; color: var(--ink-muted); font-variant-numeric: tabular-nums; margin-top: 2px; }
+  footer { margin-top: 40px; padding-top: 20px; border-top: 2px solid var(--track); color: var(--ink-muted); font-size: 15px; }
+</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="../" aria-label="Louie home">
+    <img class="light" src="../assets/icon-light.png" alt="">
+    <img class="dark" src="../assets/icon-dark.png" alt="">
+    Louie
+  </a>
+  <a class="navlink" href="../">Home</a>
+</header>
+
+<h1><span class="soft">Release</span><span class="heavy">notes.</span></h1>
+<p class="lede">What changed in each build of Louie, newest first.</p>
+
+<h2>November 14, 2026</h2>
+<article>
+  <p>Mile markers now show on your Watch: each mile, 5K and 10K takes over the face for a few seconds with its time, even during a heads-up. A new Watch page, one swipe from the run face, shows distance and current pace in big numbers.</p>
+  <p class="build">Version 0.1 (2611140528)</p>
+</article>
+<h2>November 10, 2026</h2>
+<article>
+  <p>Fixes from the first test run. On the Watch, the End buttons are easier to see, “Ease up” clears once your heart rate is back under your zone, and every heads-up taps your wrist. On the phone, Mute cues takes the place of Lock on the run screen.</p>
+  <p class="build">Version 0.1 (2611100835)</p>
+</article>
+<h2>November 9, 2026</h2>
+<article>
+  <p>A new intro. Each screen has one idea and one small animation, built from the same parts you'll see on a run.</p>
+  <p class="build">Version 0.1 (2611092024)</p>
+</article>
+<article>
+  <p>Plainer words after a run: “Easy all the way.”, “Mostly easy.” or “Ran a bit hot.”</p>
+  <p class="build">Version 0.1 (2611091831)</p>
+</article>
+<article>
+  <p>Before your easy pace is ready, its card now says what's coming and shows how far along you are.</p>
+  <p class="build">Version 0.1 (2611091730)</p>
+</article>
+<article>
+  <p>The first test build. Louie is on TestFlight.</p>
+  <p class="build">Version 0.1 (2611090844)</p>
+</article>
+
+<footer>Louie is in testing on TestFlight. The version and build number match the ones TestFlight shows.</footer>
+</body>
+</html>
