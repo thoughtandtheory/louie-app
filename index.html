@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Louie: Zone 2 Run Buddy</title>
-<meta name="description" content="Every bunny wants to sprint. Louie would rather cruise with you. An iPhone and Apple Watch app that keeps easy runs easy.">
+<meta name="description" content="Every bunny wants to sprint. Louie would rather cruise with you. An iPhone and Apple Watch app that walks you from walk–jog to 30 easy minutes, one small step at a time.">
 <link rel="canonical" href="https://thoughtandtheory.github.io/louie-app/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Louie">
 <meta property="og:title" content="Louie: Zone 2 Run Buddy">
-<meta property="og:description" content="Every bunny wants to sprint. Louie would rather cruise with you. An iPhone and Apple Watch app that keeps easy runs easy.">
+<meta property="og:description" content="Every bunny wants to sprint. Louie would rather cruise with you. An iPhone and Apple Watch app that walks you from walk–jog to 30 easy minutes, one small step at a time.">
 <meta property="og:url" content="https://thoughtandtheory.github.io/louie-app/">
 <meta property="og:image" content="https://thoughtandtheory.github.io/louie-app/assets/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -17,7 +17,7 @@
 <meta property="og:image:alt" content="Louie the bunny flashing a peace sign beside the words Meet Louie.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Louie: Zone 2 Run Buddy">
-<meta name="twitter:description" content="Every bunny wants to sprint. Louie would rather cruise with you. An iPhone and Apple Watch app that keeps easy runs easy.">
+<meta name="twitter:description" content="Every bunny wants to sprint. Louie would rather cruise with you. An iPhone and Apple Watch app that walks you from walk–jog to 30 easy minutes, one small step at a time.">
 <meta name="twitter:image" content="https://thoughtandtheory.github.io/louie-app/assets/og-image.png">
 <meta name="twitter:image:alt" content="Louie the bunny flashing a peace sign beside the words Meet Louie.">
 <meta name="color-scheme" content="light dark">
@@ -98,6 +98,38 @@
     .art { grid-column: 2; grid-row: 1; width: 100%; max-width: 360px; margin: 0; justify-self: center; }
     .copy { grid-column: 1; grid-row: 1; padding-bottom: 24px; }
   }
+
+
+  /* The path: copy beside a trail drawn like the app's Your plan (done, next up, still ahead, finish line) */
+  .path { display: grid; grid-template-columns: 1fr; gap: 32px; padding: 8px 0 72px; }
+  .path h2 { font-size: clamp(34px, 7vw, 48px); line-height: 1; letter-spacing: -0.01em; margin: 10px 0 16px; font-weight: 800; }
+  .path h2 span { font-weight: 300; display: block; }
+  .path .intro { color: var(--ink-muted); margin: 0 0 20px; max-width: 28em; }
+  .rules { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+  .rules li { color: var(--ink-muted); font-size: 17px; padding-left: 18px; position: relative; max-width: 30em; }
+  .rules li::before { content: ""; position: absolute; left: 0; top: 0.6em; width: 8px; height: 8px; border-radius: 50%; background: var(--blush); }
+  .rules b { color: var(--ink); font-weight: 600; }
+  .trail { list-style: none; margin: 0; padding: 0; position: relative; }
+  .trail li { position: relative; display: grid; grid-template-columns: 36px 1fr; gap: 14px; padding-bottom: 22px; }
+  .trail li:not(:last-child)::after { content: ""; position: absolute; left: 17px; top: 36px; bottom: 0; border-left: 2px dashed var(--track); }
+  .trail li.done::after { border-left: 3px solid var(--accent); left: 16.5px; }
+  .trail .node { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; font-weight: 800; font-size: 15px;
+                 border: 2px dashed var(--track); color: var(--ink-muted); background: var(--ground); position: relative; z-index: 1; }
+  .trail .done .node { background: var(--accent); border: 0; color: var(--on-accent); font-size: 17px; }
+  .trail .here .node { border: 3px solid var(--accent); color: var(--ink); box-shadow: 0 0 0 4px var(--track); }
+  .trail .finish .node { border: 2px solid var(--accent); color: var(--accent); }
+  .trail h3 { font-size: 20px; line-height: 1.2; font-weight: 800; margin: 5px 0 2px; }
+  .trail p { margin: 0; color: var(--ink-muted); font-size: 16px; }
+  .trail .next { background: var(--surface); border: 3px solid var(--accent); border-radius: 22px; padding: 18px 20px; margin-top: 12px; }
+  .trail .next .label { display: flex; align-items: center; gap: 8px; white-space: nowrap; letter-spacing: 0.1em; }
+  .trail .next .step { font-size: 28px; line-height: 1.1; font-weight: 800; color: var(--ink); margin: 8px 0 4px; }
+  .holds { display: inline-flex; gap: 4px; }
+  .holds i { width: 9px; height: 9px; border-radius: 50%; border: 2px solid var(--accent); }
+  .holds i.on { background: var(--accent); }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px !important; }
+  .chip { font-weight: 600; font-size: 14px; color: var(--ink); border: 2px solid var(--accent); border-radius: 999px; padding: 4px 12px; }
+  .chip.dashed { border-style: dashed; border-color: var(--ink-muted); color: var(--ink-muted); }
+  @media (min-width: 820px) { .path { grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; padding-bottom: 96px; } }
 
   /* How Louie helps */
   .helps { padding: 8px 0 72px; }
@@ -199,11 +231,33 @@
         <p class="label">Zone 2 Run Buddy · iPhone + Apple Watch</p>
         <h1><span class="soft">Meet</span><span class="heavy">Louie.</span></h1>
         <p class="lede">Every bunny wants to sprint. Louie would rather cruise with you.</p>
-        <p class="sub">A running buddy that keeps your easy runs easy, so you build the base that makes every other run better.</p>
+        <p class="sub">A running buddy that keeps your easy runs easy, and walks you from walk–jog to 30 easy minutes, one small step at a time.</p>
         <div class="cta">
           <span class="pill secondary"><span class="dot" aria-hidden="true"></span>Coming soon to the App Store</span>
         </div>
       </div>
+    </section>
+
+    <section class="path" aria-labelledby="path-title">
+      <div class="path-copy">
+        <p class="label">The path</p>
+        <h2 id="path-title"><span>One small step</span> at a time.</h2>
+        <p class="intro">Louie gives you a plan you can see: a trail of chapters from your first easy run to 30 minutes of easy jogging, unbroken.</p>
+        <ul class="rules">
+          <li><b>Hold a step twice and the next one opens.</b> A hold is the whole jog with no walk and your heart under its ceiling. Jog the next step's length in one go and it opens straight away.</li>
+          <li><b>Start where you are.</b> Your first run shows Louie where that is. Already jogging? You skip ahead.</li>
+          <li><b>A missed day costs nothing.</b> A rough day doesn't count against you, and after a long break Louie adds a shorter step to ease you back in.</li>
+        </ul>
+      </div>
+      <ol class="trail" aria-label="The chapters, as Louie shows them on Your plan">
+        <li class="done"><span class="node" aria-hidden="true">✓</span><div><h3>Find your easy</h3><p>One run, no goal.</p></div></li>
+        <li class="here"><span class="node" aria-hidden="true">2</span><div><h3>Walk–jog</h3><p>Jog 1 to 5 min with 1 min walks, 8 rounds a run.</p>
+          <div class="next"><p class="label">Next up · Hold 2 of 2 <span class="holds" aria-hidden="true"><i class="on"></i><i></i></span></p><p class="step">Jog 2, walk 1</p><p>Once more and the jogs get longer.</p></div></div></li>
+        <li><span class="node" aria-hidden="true">3</span><div><h3>Fewer walks</h3><p>Longer jogs, short walks, to one 15 min jog.</p></div></li>
+        <li><span class="node" aria-hidden="true">4</span><div><h3>One long jog</h3><p>15 to 30 min unbroken.</p></div></li>
+        <li class="finish"><span class="node" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M7 21V4m0 0h10l-2 4 2 4H7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><h3>Your finish line</h3><p>Louie asks once when you get there.</p>
+          <p class="chips"><span class="chip">Graduate at 30</span><span class="chip dashed">or go longer: 45, 60</span></p></div></li>
+      </ol>
     </section>
 
     <section class="helps" aria-labelledby="helps-title">
@@ -213,14 +267,14 @@
         <article class="card">
           <p class="label">Heart</p>
           <p class="num" aria-hidden="true">Z2</p>
-          <h3>Stay in your zone</h3>
-          <p>Louie reads your heart rate from Apple Watch and gives you a heads-up before you drift over, with a tap on your wrist and a word in your ear.</p>
+          <h3>Stay easy on the run</h3>
+          <p>Your heart rate is the biggest thing on the screen. Before you go over, Louie asks you to ease back, with a tap on your wrist and a word in your ear.</p>
         </article>
         <article class="card">
-          <p class="label">Steps</p>
-          <p class="num" aria-hidden="true">♪</p>
-          <h3>Find your rhythm</h3>
-          <p>A soft metronome at your cadence and an easy breathing pattern, played over your own music. Your music never stops for Louie.</p>
+          <p class="label">The end</p>
+          <p class="num" aria-hidden="true">✌&#xFE0E;</p>
+          <h3>Made to be outgrown</h3>
+          <p>Reach your finish line and Louie asks once: graduate, or go longer. Then he steps back. No streaks, no points, no reminders to come back.</p>
         </article>
         <article class="card">
           <p class="label">Private</p>
